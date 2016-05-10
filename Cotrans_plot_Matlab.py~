@@ -87,7 +87,7 @@ def main(argv=None,):
             
             args,linker_seq,recalc_end,min_len,max_len = params.parse_options(argv)
             params.check()
-        reactivities_dir = args[0] +'/'
+        reactivities_dir = args[0]
         output_dir = reactivities_dir + '/tmp_rho_conversion/'
         rm_temp = True
         Cotrans_utils.reactivities_to_rho_file(reactivities_dir, linker_seq, output_dir, rm_temp, min_len, max_len)
