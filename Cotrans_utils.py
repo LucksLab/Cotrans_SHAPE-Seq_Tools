@@ -62,7 +62,6 @@ def recalc_thetas(thetas, start_i, end_i):
     """
     cut_thetas = [float(r) for r in thetas[start_i:end_i]]
     cut_thetas_sum = sum([float(r) for r in cut_thetas])
-    cut_thetas_l = len(cut_thetas)
     if cut_thetas_sum == 0:
         return cut_thetas
     recalced_thetas = [r/cut_thetas_sum for r in cut_thetas]
@@ -101,15 +100,11 @@ def parse_reactivity_rho(infile, adapterseq, outputfile):
             seqstring = "".join(seq)
             (seq_cut, adapter_len) = end_match_strip(seqstring, adapterseq)
 
-            rho = calc_rho_from_theta_list(recalc_thetas(theta, 0 , -adapter_len))
             pos = pos[:-adapter_len]
             untreated_sum = untreated_sum[:-adapter_len]
             treated_sum = treated_sum[:-adapter_len]
 
-            rc_sum = sum(treated_sum) + sum(untreated_sum)
-            rc_flag = 0 if (sum(treated_sum) + sum(untreated_sum) < 2000) else 1
-
-            theta_cut = [str(t) for t in recalc_thetas(theta, 0 , -adapter_len)]
+            theta_cut = [str(t) for t in recalc_thetas(theta, 0, -adapter_len)]
             rho_cut = calc_rho_from_theta_list(theta_cut)
             try:
                 with open(outputfile+".theta", 'w') as out:
@@ -178,7 +173,7 @@ def reactivities_to_rho_file(input_dir, adapterseq, output_dir, rm_temp=True, mi
     return outname
 
 
-def reactivities_to_reads_files(input_dir, adapterseq,min_len=0,max_len=0):
+def reactivities_to_reads_files(input_dir, adapterseq, min_len=0, max_len=0):
     """
     Takes a directory of reactivities files and the adapter sequence and
     creates tab delimited reads files:
@@ -210,4 +205,3 @@ def reactivities_to_reads_files(input_dir, adapterseq,min_len=0,max_len=0):
                 f2.write("\t".join([a[1] for a in reads[key]]) + "\n")
 
     return (outname_pos, outname_neg)
-
