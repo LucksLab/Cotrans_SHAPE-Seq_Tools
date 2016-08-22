@@ -45,7 +45,8 @@ class Params:
                                         "help",
 					"linker=",
                                         "min-len=",
-                                        "max-len="])
+                                        "max-len=",
+                                        "recalc_end="])
 
         except getopt.error, msg:
             raise Usage(msg)
@@ -66,6 +67,8 @@ class Params:
                 min_len = int(value)
             elif option in ("-m","--max-len"):
                 max_len = int(value)
+            elif option in ("-r", "--recalc"):
+                recalc_end = int(value)
 
 	if len(args) != 1:
             raise Usage(help_message)
@@ -90,8 +93,8 @@ def main(argv=None,):
         reactivities_dir = args[0] +'/'
         output_dir = reactivities_dir + '/tmp_rho_conversion/'
         rm_temp = True
-        Cotrans_utils.reactivities_to_rho_file(reactivities_dir, linker_seq, output_dir, rm_temp, min_len, max_len)
-        Cotrans_utils.reactivities_to_reads_files(reactivities_dir, linker_seq, min_len, max_len)
+        Cotrans_utils.reactivities_to_rho_file(reactivities_dir, linker_seq, output_dir, rm_temp, min_len, max_len, recalc_end)
+        Cotrans_utils.reactivities_to_reads_files(reactivities_dir, linker_seq, min_len, max_len, recalc_end)
         
     except Usage, err:	
 	print sys.stderr, sys.argv[0].split("/")[-1] + ": " + str(err.msg) 

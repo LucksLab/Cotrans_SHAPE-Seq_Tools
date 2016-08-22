@@ -73,7 +73,7 @@ def calc_rho_from_theta_list(theta):
     return rho
 
 
-def parse_reactivity_rho(infile, adapterseq, outputfile):
+def parse_reactivity_rho(infile, adapterseq, outputfile, endcut=0):
     """
     Parses reactivity file and outputs .theta and .seq, stripping off the
     adapter sequence (iteratively shrinking). Returns (positions, thetas,
@@ -100,6 +100,11 @@ def parse_reactivity_rho(infile, adapterseq, outputfile):
             seqstring = "".join(seq)
             (seq_cut, adapter_len) = end_match_strip(seqstring, adapterseq)
 
+            # Also, endcut can be used to represent the polymerase footprint and remove these
+            # bases from being used in the subsequent calculations.
+            if endcut < 0:
+                seq_cut = seq_cut[:endcut]
+                adapter_len -= endcut
             pos = pos[:-adapter_len]
             untreated_sum = untreated_sum[:-adapter_len]
             treated_sum = treated_sum[:-adapter_len]
@@ -129,7 +134,7 @@ def parse_reactivity_rho(infile, adapterseq, outputfile):
         print "Error opening reactivities file: " + infile
 
 
-def reactivities_to_rho_file(input_dir, adapterseq, output_dir, rm_temp=True, min_len=0, max_len=0):
+def reactivities_to_rho_file(input_dir, adapterseq, output_dir, rm_temp=True, min_len=0, max_len=0, endcut=0):
     """
     Takes a directory of reactivities files and the adapter sequence and
     creates .theta, .rho, and .seq files. Also outputs rho_table.txt
@@ -146,7 +151,7 @@ def reactivities_to_rho_file(input_dir, adapterseq, output_dir, rm_temp=True, mi
     for f in infiles:
         fname = re.findall("([^/]+).txt$", f)
         output_file_prefix = output_dir+"/"+fname[0]
-        pos, rho_cut, theta = parse_reactivity_rho(f, adapterseq, output_file_prefix)
+        pos, rho_cut, theta = parse_reactivity_rho(f, adapterseq, output_file_prefix, endcut)
         if sum([float(t) for t in theta]) == 0:
             print("Not enough alignments in length {0} to calculate theta/rho. Line left blank.".format(len(pos)))
             rhos[len(pos)] = "-1\t"*len(pos) + "\n"
@@ -173,7 +178,7 @@ def reactivities_to_rho_file(input_dir, adapterseq, output_dir, rm_temp=True, mi
     return outname
 
 
-def reactivities_to_reads_files(input_dir, adapterseq, min_len=0, max_len=0):
+def reactivities_to_reads_files(input_dir, adapterseq, min_len=0, max_len=0, endcut=0):
     """
     Takes a directory of reactivities files and the adapter sequence and
     creates tab delimited reads files:
@@ -195,6 +200,10 @@ def reactivities_to_reads_files(input_dir, adapterseq, min_len=0, max_len=0):
             lines = f.readlines()
             seq = "".join([a.split()[3] for a in lines[1:]])
             (seq_cut, adapter_len) = end_match_strip(seq, adapterseq)
+            if endcut < 0:
+                seq_cut = seq_cut[:endcut]
+                adapter_len -= endcut
+
             if min_len == 0 or len(seq_cut) >= min_len:    #Only apply logic if a value was supplied, but use bounds if so
                 if max_len == 0 or len(seq_cut) <= max_len:
                      reads[len(seq_cut)] = [a.split()[4:6] for a in lines[:-adapter_len]]
