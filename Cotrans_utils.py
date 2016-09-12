@@ -3,6 +3,11 @@ Modules used in creating reactivity and read matrices for Cotranscriptional SHAP
 
 Written by Angela M Yu <amy35@cornell.edu>, 2014-2016
 Last edited: 5/4/2016
+Last documentation update: 9/11/2016
+
+Copyright (C) 2016  Julius B. Lucks, Angela M Yu, and Kyle E. Watters.
+All rights reserved.
+Distributed under the terms of the GNU General Public License, see 'LICENSE'.
 """
 
 import os
@@ -12,6 +17,9 @@ import shutil
 
 
 def format_rna_string(nt):
+    """
+    Uppercases a string and replaces 'T''s with 'U''s
+    """
     return nt.upper().replace('T', 'U')
 
 
@@ -31,6 +39,9 @@ def end_match_strip(seq, adapter):
 
 
 def make_seq(seq, seqfilename):
+    """
+    Outputs a sequence string to .seq format
+    """
     seq = format_rna_string(seq)
 
     with open(seqfilename, "w") as new_seq:
@@ -69,6 +80,10 @@ def recalc_thetas(thetas, start_i, end_i):
 
 
 def calc_rho_from_theta_list(theta):
+    """
+    Calculates rho reactivities from a list of theta reactivities
+    rho_i = theta_i * length of RNA
+    """
     rho = [float(t) * len(theta) for t in theta]
     return rho
 
