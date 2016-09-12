@@ -3,6 +3,7 @@
 %colored by reactivity
 
 %Written by Kyle E. Watters, 2016
+%Version 0.0.2
 %Last documentation update: 9/12/2016
 
 %Copyright (C) 2016  Julius B. Lucks, Angela M Yu, and Kyle E. Watters.

@@ -1,4 +1,4 @@
-# Cotrans_SHAPE-Seq_Tools
+# Cotrans_SHAPE-Seq_Tools v0.0.2
 Tools for Processing Cotranscriptional SHAPE-Seq Datasets
 
 -------------------------------------------------------------------------------------------------------------

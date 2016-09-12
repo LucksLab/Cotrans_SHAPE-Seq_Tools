@@ -2,6 +2,7 @@
 Modules used in creating reactivity and read matrices for Cotranscriptional SHAPE-Seq data.
 
 Written by Angela M Yu <amy35@cornell.edu>, 2014-2016
+Version 0.0.2
 Last edited: 5/4/2016
 Last documentation update: 9/11/2016
 
