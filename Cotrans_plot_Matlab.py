@@ -1,8 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-##Written by Kyle Watters on October, 7th 2014 to parse reactivities data into a matrix format for matlab
-#Edited by Angela M Yu on May 4, 2016
+"""
+Written by Kyle Watters on October, 7th 2014 to parse reactivities data into a matrix format for matlab
+Edited by Angela M Yu on May 4, 2016
+Last documentation update: 9/12/2016
+
+Copyright (C) 2016  Julius B. Lucks, Angela M Yu, and Kyle E. Watters.
+All rights reserved.
+Distributed under the terms of the GNU General Public License, see 'LICENSE'.
+"""
 
 import getopt
 import sys

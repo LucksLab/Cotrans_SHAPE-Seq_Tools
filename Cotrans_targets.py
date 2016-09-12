@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 
-#Cotrans_targets builds a targets file for spats automatically for all lengths of an RNA
-#using all of the intermediate lengths - that is, for a 100 nt RNA, it will automatically make 
-#the targets file for all the intermediate lengths from 5' -> 3' with the appropriate 3' adapter
+"""
+Cotrans_targets builds a targets file for spats automatically for all lengths of an RNA
+using all of the intermediate lengths - that is, for a 100 nt RNA, it will automatically make 
+the targets file for all the intermediate lengths from 5' -> 3' with the appropriate 3' adapter
 
-#This script was written in February 2014 by Kyle Watters
-#Copyright (c) 2014 Kyle Watters. All rights reserved.
+This script was written in February 2014 by Kyle Watters
+Last documentation update: 9/12/2016
+
+Copyright (C) 2016  Julius B. Lucks, Angela M Yu, and Kyle E. Watters.
+All rights reserved.
+Distributed under the terms of the GNU General Public License, see 'LICENSE'.
+"""
 
 import sys
 import os

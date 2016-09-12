@@ -1,5 +1,12 @@
-%Cotrans_matrix_rhos_processing.m takes tabular formatting SHAPE-Seq
+%Cotrans_matrix_rhos_processing_2D.m takes tabular formatting SHAPE-Seq
 %reactivities and alignment numbers and plots them on a heatmap-type plot
+
+%Written by Kyle E. Watters, 2016
+%Last documentation update: 9/12/2016
+
+%Copyright (C) 2016  Julius B. Lucks, Angela M Yu, and Kyle E. Watters.
+%All rights reserved.
+%Distributed under the terms of the GNU General Public License, see 'LICENSE'.
 
 clear
 load('jet_hires_white_bckgd')
