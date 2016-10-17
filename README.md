@@ -1,6 +1,6 @@
 # Cotrans_SHAPE-Seq_Tools
 ### v0.0.2
-Tools for Processing Cotranscriptional SHAPE-Seq Datasets
+Tools for Processing Cotranscriptional SHAPE-Seq Datasets after processing raw read files with [Spats](https://github.com/LucksLab/spats/releases/tag/v1.0.1 Spats v1.0.1)
 
 Used in [doi:10.1038/nsmb.3316](http://dx.doi.org/10.1038/nsmb.3316).
 
@@ -30,6 +30,11 @@ Options
 -x, --entire-only           Only produce the target for the max length
 ```
 
+Example:
+```
+Cotrans_targets.py  --adapter "GTCCTTGGTGCCCGAGTCAG" --adapter-name "IDT2_mod" SRP "ATCGGGGGCTCTGTTGGTTCTCCCGCAACGCTACTCTGTTTACCAGGTCAGGTCCGGAAGGAAGCAGCCAAGGCAGATGACGCGTGTGCCGGGATGTAGCTGGCAGGGCCCCCACCCGGGTCGGCATGGCATCTCCACCTCCTCGCGGTCCGACCTGGGCATCCGAA" SRP.fa
+```
+
 -------------------------------------------------------------------------------------------------------------
 
 ###Cotrans_plot_Matlab.py
@@ -49,6 +54,10 @@ General Options:
 -m, --max-len <N>           Maximum length to include (default is last length)
 ```
 
+Example:
+```
+python Cotrans_plot_Matlab.py -l "CTGACTCGGGCACCAAGGA" Reactivities_Longest_RT_starts_only_split/
+```
 -------------------------------------------------------------------------------------------------------------
 
 ###Cotrans_matrix_rhos_processing_2D.m and Cotrans_matrix_rhos_processing_3D.m
