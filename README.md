@@ -1,5 +1,7 @@
-# Cotrans_SHAPE-Seq_Tools v0.0.2
+# Cotrans_SHAPE-Seq_Tools
+## v0.0.2
 Tools for Processing Cotranscriptional SHAPE-Seq Datasets
+
 Used in doi:10.1038/nsmb.3316
 
 -------------------------------------------------------------------------------------------------------------
@@ -12,6 +14,7 @@ For an RNA of N nt, produces N-y (y=user chosen length) intermediate lengths in 
 targets file with the supplied adapter sequence at the 3' end.
 
 Usage:
+
    `Cotrans_targets.py [options] <RNA name> <RNA sequence> <targets filename(.fa recommended)>`
 
 Options
@@ -31,7 +34,8 @@ Options
 Cotrans_plot_Matlab.py:
 Takes a directory containing cotranscriptional SHAPE-Seq reactivities and converts it to a nice matrix form
 
-Usage:                                                                                                          
+Usage:
+
    `python Cotrans_plot_Matlab.py [options] <reactivities_dir>`
 
 General Options:                                                                                                
