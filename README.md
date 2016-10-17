@@ -1,6 +1,6 @@
 # Cotrans_SHAPE-Seq_Tools
 ### v0.0.2
-Tools for Processing Cotranscriptional SHAPE-Seq Datasets after processing raw read files with [Spats](https://github.com/LucksLab/spats/releases/tag/v1.0.1 Spats v1.0.1)
+Tools for processing cotranscriptional SHAPE-Seq datasets after processing raw read files with [Spats](https://github.com/LucksLab/spats/releases/tag/v1.0.1 Spats v1.0.1).
 
 Used in [doi:10.1038/nsmb.3316](http://dx.doi.org/10.1038/nsmb.3316).
 
