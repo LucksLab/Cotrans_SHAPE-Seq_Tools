@@ -7,7 +7,7 @@ Used in [doi:10.1038/nsmb.3316](http://dx.doi.org/10.1038/nsmb.3316).
 
 -------------------------------------------------------------------------------------------------------------
 
-Cotrans_targets.py:
+###Cotrans_targets.py
 Generates a targets file for spats when analyzing intermediate lengths
 of an RNA with an attached adapter for RT priming.
 
@@ -32,7 +32,7 @@ Options
 
 -------------------------------------------------------------------------------------------------------------
 
-Cotrans_plot_Matlab.py:
+###Cotrans_plot_Matlab.py
 Takes a directory containing cotranscriptional SHAPE-Seq reactivities and converts it to a nice matrix form
 
 Usage:
@@ -51,10 +51,12 @@ General Options:
 
 -------------------------------------------------------------------------------------------------------------
 
+###Cotrans_matrix_rhos_processing_2D.m and Cotrans_matrix_rhos_processing_3D.m
 Cotrans_matrix_rhos_processing_2D.m and Cotrans_matrix_rhos_processing_3D.m takes tabular formated SHAPE-Seq
  reactivities and alignment numbers and plots then in 2D heatmap or 3D bar chart, respectively.
 
 -------------------------------------------------------------------------------------------------------------
 
+###Cotrans_matrix_rhos_processing_differences.m
 Cotrans_matrix_rhos_processing_differences.m takes two tabular formatted SHAPE-Seq reactivities and plots
  their differences in a 2D heatmap colored by reactivity.
