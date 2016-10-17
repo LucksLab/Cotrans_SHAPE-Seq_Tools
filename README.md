@@ -1,8 +1,9 @@
 # Cotrans_SHAPE-Seq_Tools
-## v0.0.2
+### v0.0.2
 Tools for Processing Cotranscriptional SHAPE-Seq Datasets
 
-Used in doi:10.1038/nsmb.3316
+Used in [doi:10.1038/nsmb.3316](http://dx.doi.org/10.1038/nsmb.3316).
+
 
 -------------------------------------------------------------------------------------------------------------
 
