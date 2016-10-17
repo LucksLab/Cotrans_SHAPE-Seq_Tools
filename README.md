@@ -1,5 +1,6 @@
 # Cotrans_SHAPE-Seq_Tools v0.0.2
 Tools for Processing Cotranscriptional SHAPE-Seq Datasets
+Used in doi:10.1038/nsmb.3316
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -11,9 +12,10 @@ For an RNA of N nt, produces N-y (y=user chosen length) intermediate lengths in 
 targets file with the supplied adapter sequence at the 3' end.
 
 Usage:
-   Cotrans_targets.py [options] <RNA name> <RNA sequence> <targets filename(.fa recommended)>
+   `Cotrans_targets.py [options] <RNA name> <RNA sequence> <targets filename(.fa recommended)>`
 
 Options
+```
 -h, --help                  opens help message
 -v, --version               displays version number
 -a, --adapter <sequence>    Adapter sequence (5'->3') to add at the 3' end of the RNA w/ barcodes (if applicable)
@@ -22,6 +24,7 @@ Options
 -i, --min-len <N>           Minimum length of RNA from 5' end to make target with (default = 20)
 -m, --max-len <N>           Maximum length of RNA from 5' end to make target with (default is entire RNA)
 -x, --entire-only           Only produce the target for the max length
+```
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -29,15 +32,17 @@ Cotrans_plot_Matlab.py:
 Takes a directory containing cotranscriptional SHAPE-Seq reactivities and converts it to a nice matrix form
 
 Usage:                                                                                                          
-   python Cotrans_plot_Matlab.py [options] <reactivities_dir>                                                                      
+   `python Cotrans_plot_Matlab.py [options] <reactivities_dir>`
 
 General Options:                                                                                                
+```
 -h, --help                  Opens help message
 -v, --version               Displays version number
 -l, --linker <string>       Linker sequence to exclude from RNAs (default is IDT mod: CTGACTCGGGCACCAAGGA)
 -r, --recalc_end            Recalculate rhos. Specify the last index of the rhos to be considered. Ex. -1 will drop the last rho value and renormalize based off of reduced length.
 -i, --min-len <N>           Minimum length to include (default is first length)
 -m, --max-len <N>           Maximum length to include (default is last length)
+```
 
 -------------------------------------------------------------------------------------------------------------
 
