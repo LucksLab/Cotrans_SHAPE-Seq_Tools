@@ -63,9 +63,12 @@ python Cotrans_plot_Matlab.py -l "CTGACTCGGGCACCAAGGA" Reactivities_Longest_RT_s
 ###Cotrans_matrix_rhos_processing_2D.m and Cotrans_matrix_rhos_processing_3D.m
 Cotrans_matrix_rhos_processing_2D.m and Cotrans_matrix_rhos_processing_3D.m takes tabular formated SHAPE-Seq
  reactivities and alignment numbers and plots then in 2D heatmap or 3D bar chart, respectively.
+Running this code relies on user input to select input files.
 
 -------------------------------------------------------------------------------------------------------------
 
 ###Cotrans_matrix_rhos_processing_differences.m
 Cotrans_matrix_rhos_processing_differences.m takes two tabular formatted SHAPE-Seq reactivities and plots
  their differences in a 2D heatmap colored by reactivity.
+Running this code relies on user input to select input files.
+
